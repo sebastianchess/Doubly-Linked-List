@@ -1,6 +1,6 @@
 from __future__ import annotations
 from dataclasses import dataclass, field
-from typing import overload, NoReturn, Self, Any
+from typing import overload, Self
 from collections.abc import Generator
 
 
@@ -350,8 +350,3 @@ class DLinkedList[T]:
     
     def __repr__(self) -> str: 
         return f"<DLinkedList={str(self)}>"
-
-names = DLinkedList[int | str]("hello", "bye", "cya", "good morning", "uwu")
-
-names[::2] = DLinkedList[int | str](1, 2)
-print(names)
