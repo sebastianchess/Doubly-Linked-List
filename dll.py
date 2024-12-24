@@ -257,6 +257,9 @@ class DLinkedList[T]:
         """It's a helper method to handle the slice object"""
         start, stop, step = slice_obj.start, slice_obj.stop, slice_obj.step 
 
+        if step is None: 
+            step = 1 
+            
         if step < 0: 
             if start is None and stop is None: 
                 start = len(self) - 1
@@ -265,8 +268,7 @@ class DLinkedList[T]:
         else: 
             start = [start, 0][start is None]
             stop = [stop, len(self)][stop is None]
-            step = [step, 1][step is None]
-            
+    
         return start, stop, step
 
     @overload 
